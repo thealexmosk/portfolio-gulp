@@ -1,0 +1,157 @@
+.about
+  background: $bg-gradient-color
+  animation: init_bg .5s ease-in
+  color: $font-color-item
+  &__main
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 100%
+  &__item
+    display: flex
+    flex-direction: column
+    justify-content: center
+    position: absolute
+    height: 16vh
+    width: 16vh
+    max-height: 140px
+    max-width: 140px
+    font-size: 14px
+    text-align: center
+    @media (min-width: $media-tablet)
+      font-size: 16px
+    background-color: $bg-color-item
+    border: 1px solid gray
+    border-radius: 50%
+    &__icon
+      svg
+        width: 15px
+        height: 15px
+        fill: $font-color-item
+    &__main
+      font-weight: 400
+      font-size: 1.05em
+      padding-bottom: 5px
+  &__from
+    bottom: -30vh
+    left: 0
+    animation: move_from 10s alternate ease-in-out infinite
+  &__born
+    bottom: -10vh
+    left: -50%
+    animation: move_born 3s alternate ease-in-out infinite
+  &__play
+    top: -15vh
+    left: -30%
+    animation: move_play 8s alternate ease-in-out infinite
+  &__love
+    top: -12vh
+    right: -50%
+    animation: move_love 7s alternate ease-in-out infinite
+  &__listen
+    bottom: -20vh
+    right: -35%
+    animation: move_listen 8s alternate ease-in-out infinite
+  &__passion
+    top: -25vh
+    right: 0
+    animation: move_passion 8s alternate ease-in-out infinite
+
+.about-alex
+  &__wrapper
+    position: relative
+    height: 30vh
+    width: 30vh
+    max-height: 370px
+    max-width: 370px
+    border: 1px solid gray
+    border-radius: 50%
+    background-color: $bg-color-item
+
+.about__alex
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: 100%
+  &__text
+    text-align: center
+    font-size: 25px
+    @media (min-width: $media-tablet)
+      font-size: 30px
+  &__rot
+    svg
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      height: calc(30vh + 30px)
+      width: calc(30vh + 30px)
+      max-height: calc(350px + 30px)
+      max-width: calc(350px + 30px)
+      circle
+        stroke-dasharray: 40% 15% 25% 20% 30% 10%
+        stroke-width: 5px
+        stroke: $bg-color-item
+        fill: none
+        transform-origin: 50% 50%
+        transform-style: preserve-3D
+        animation: rotate 80s infinite linear
+
+.about.active
+  animation: chabge_about_bg 2.5s ease-in forwards
+  animation-delay: 0.2s
+
+@keyframes move_from
+  from
+    transform: translate(-20%, -10%)
+  to
+    transform: translate(20%, 10%)
+
+@keyframes move_play
+  from
+    transform: translate(-10%, 5%)
+  to
+    transform: translate(20%, -20%)
+
+@keyframes move_born
+  from
+    transform: translate(0, -10%)
+  to
+    transform: translate(10%, -5%)
+
+@keyframes move_love
+  from
+    transform: translate(0, -5%)
+  to
+    transform: translate(5%, 20%)
+
+@keyframes move_listen
+  from
+    transform: translate(-30%, 0)
+  to
+    transform: translate(25%, -20%)
+
+@keyframes move_passion
+  from
+    transform: translate(-30%, -10%)
+  to
+    transform: translate(0, 10%)
+
+@keyframes rotate
+	to
+		transform: rotate(360deg)
+
+@keyframes chabge_about_bg
+  5%
+    background: $bg-gradient-color
+  100%
+    background: $bg-color-main
+
+@keyframes init_bg
+  0%
+    background: $bg-color-main
+  100%
+    background: $bg-gradient-color

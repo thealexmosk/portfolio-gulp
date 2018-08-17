@@ -1,0 +1,47 @@
+@import "gradient-animation"
+
+.contact
+  background: linear-gradient(123deg, rgba(69,151,252,1) 0%, rgba(145,59,162,1) 15%, rgba(253,53,29,1) 40%, rgba(255,118,71,1) 50%, rgba(253,34,29,1) 60%, rgba(149,54,157,1) 80%, rgba(69,151,252,1) 100%)
+  background-size: 330% 330%
+  color: white
+  &__container
+    align-items: center
+  &__type
+    margin: 10px 0
+  &__email
+    font-size: 22px
+    @media (min-width: $media-laptop)
+      font-size: 25px
+  // &__nick
+  //   font-size: 20px
+  //   font-weight: 400
+
+.contact.active
+  animation: gradient 15s ease-in-out alternate infinite
+
+.social
+  &__item
+    display: inline-block
+    padding: 5px
+    height: 40px
+    width: 40px
+    margin: 0 5px
+    text-decoration: none
+    @media (min-width: $media-laptop)
+      height: 50px
+      width: 50px
+    svg
+      height: 30px
+      width: 30px
+      @media (min-width: $media-laptop)
+        height: 40px
+        width: 40px
+      fill: white
+  &__mobile
+    display: inline-block
+    @media (min-width: $media-laptop)
+      display: none
+  &__desktop
+    display: none
+    @media (min-width: $media-laptop)
+      display: inline-block

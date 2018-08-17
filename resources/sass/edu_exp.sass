@@ -1,0 +1,172 @@
+.edu_exp
+  background: $main-gradient
+  &__container
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    align-items: flex-start
+    align-content: center
+  &__title
+    margin: 25px 10px
+    font-size: 27px
+
+.edu, .exp
+  width: 300px
+
+.place
+  &__position
+    font-weight: 400
+  &__respons
+    font-size: 15px
+    &::before
+      content: '-'
+      padding-right: 5px
+
+.respons
+  &__list
+    font-size: 14px
+    padding-left: 20px
+    list-style: none
+  &__item::before
+    content: '•'
+    padding-right: 10px
+    color: $font-color-secondary
+
+.story
+  &__container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: relative
+  height: 50px
+  margin-left: 50px
+  font-size: 16px
+  &__main
+    padding-left: 30px
+  &__line
+    position: absolute
+    width: 6px
+    svg
+      line, path
+        fill: none
+        stroke-width: 2
+        stroke: $font-color-secondary
+      path
+        stroke-dasharray: 4 2
+  &__point
+    position: absolute
+    display: inline-block
+    width: 7px
+    height: 7px
+    svg circle
+      fill: $font-color-secondary
+    &::before
+      position: absolute
+      top: -5px
+      left: -50px
+      font-size: 14px
+      width: 50px
+      text-align: center
+  &__kpi
+    height: 80px
+  &__wt
+    height: 90px
+    margin-left: 80px
+  &__kneu
+    height: 140px
+  &__java
+    position: absolute
+    top: 15%
+    left: 10px
+    font-size: 15px
+  &__nerdify
+    height: 80px
+  &__livres
+    height: 110px
+  &__goodwin
+    height: 160px
+  &__freelance
+    height: 190px
+
+.point
+  &__begin
+    top: 0
+  &__end
+    bottom: 0
+  &__2012
+    &::before
+      content: '2012'
+  &__2014
+    &::before
+      content: '2014'
+  &__wt
+    width: 15px
+    height: 15px
+    left: -5px
+    svg
+      width: 15px
+      height: 15px
+      fill: $font-color-secondary
+      transform: rotate(135deg)
+    &::before
+      content: 'Summer 2014'
+      top: -12px
+      left: -55px
+  &__2017
+    &::before
+      content: '2017'
+  &__java
+    top: 30%
+    &::before
+      content: '2015'
+  &__2016-sep
+    &::before
+      content: 'Sep 2016'
+  &__2016-nov
+    &::before
+      content: 'Nov 2016'
+  &__2017-mar
+    &::before
+      content: 'Mar 2017'
+  &__2018-apr
+    &::before
+      content: 'Apr 2018'
+
+.line
+  &__2012-2014
+    height: 80px
+  &__2014-wt
+    bottom: -40px
+    height: 45px
+  &__wt-2014
+    transform: scaleX(-1)
+    bottom: 0
+    height: 45px
+  &__2014-2017
+    height: 135px
+  &__2016-sep--2016-nov
+    height: 80px
+  &__2016-nov--2017-mar
+    height: 110px
+  &__2017-mar--2018-apr
+    height: 160px
+    svg
+      height: 160px
+  &__2018-apr--undef
+    height: 190px
+    svg
+      height: 190px
+
+.exp__point
+  &::before
+    left: -55px
+
+.edu_exp.active
+  .story__container
+    animation: show_up 2.5s ease-in-out forwards
+
+@keyframes show_up
+  0%
+    opacity: 0
+  100%
+    opacity: 100

@@ -1,0 +1,14 @@
+@keyframes gradient {
+  0% {
+    background-position: 0% 10%;
+  }
+	20% {
+    background-position: 10% 0%;
+  }
+  70% {
+    background-position: 100% 90%;
+  }
+	100% {
+    background-position: 90% 100%;
+  }
+}

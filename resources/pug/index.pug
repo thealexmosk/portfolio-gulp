@@ -1,0 +1,22 @@
+
+doctype html
+html(lang= en)
+  include head
+  BODY.page
+    .hidden
+      include symbol/svg/sprite.symbol.svg
+    include header
+    #fullpage
+      include intro
+      include about
+      include skills
+      include edu_exp
+      include contact
+        //- include footer
+
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/vendors/easings.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/vendors/scrolloverflow.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/fullpage.min.js")
+
+script(src="/assets/js/main.js")

@@ -1,0 +1,72 @@
+.intro
+  background: $main-gradient
+  &__container
+    position: relative
+  &__text
+    position: absolute
+    bottom: 35vh
+  &__name
+    font-size: 52px
+    line-height: 48px
+    @media (min-width: $media-mobile-l)
+      font-size: 72px
+      line-height: 66px
+    @media (min-width: $media-laptop)
+      font-size: 92px
+      line-height: 80px
+  &__description
+    font-size: 28px
+    @media (min-width: $media-mobile-l)
+      font-size: 36px
+  &__photo
+    position: absolute
+    bottom: 0
+    left: 35%
+    height: 350px
+    @media (min-width: $media-mobile-l)
+      height: 500px
+
+.photo__asset
+  height: 350px
+  @media (min-width: $media-mobile-l)
+    height: 500px
+
+.description
+  padding-top: 30px
+  &__item
+    list-style-type: none
+    &::before
+      content: '–'
+      margin-right: 5px
+
+.name
+  &--main
+    color: $font-color-main
+  &--secondary
+    color: $font-color-secondary
+  &__last
+    padding-left: 50px
+
+.intro.active
+  .photo__asset
+    transform: translateY(100vh)
+    opacity: 0
+    animation: showPhoto 1s ease-in-out forwards
+    animation-delay: 1s
+  .intro__name
+    transform: translateX(-100vh)
+    animation: showText 1s ease-in-out forwards
+    animation-delay: .3s
+  .intro__description
+    transform: translateX(-100vh)
+    animation: showText 1s ease-in-out forwards
+    animation-delay: .7s
+
+@keyframes showPhoto
+  to
+    transform: translateY(0)
+    opacity: 100
+
+@keyframes showText
+  to
+    transform: translateX(0)

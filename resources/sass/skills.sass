@@ -1,0 +1,47 @@
+.skills
+  background: $main-gradient
+  &__category
+    max-width: 600px
+    &__title
+      font-size: 20px
+      margin: 10px 0
+  .skill
+    display: inline-block
+    margin: 4px
+    padding: 2px 8px
+    border: 1px solid $bg-light-gray
+    border-radius: 15px
+    text-align: center
+    background-color: $bg-light-gray
+    color: #fff
+    &__name
+      font-size: 15px
+      padding: 0 3px
+      font-weight: 400
+      @media (min-width: $media-laptop)
+        font-size: 17px
+    &__desc
+      font-size: 13px
+      @media (min-width: $media-laptop)
+        font-size: 15px
+
+.skills.active
+  .skills
+    &__title
+      opacity: 0
+      animation: appear 1s ease-in-out forwards
+    &__category
+      opacity: 0
+      animation: appear 1s ease-in-out forwards
+      &:nth-child(1)
+        animation-delay: .5s
+      &:nth-child(2)
+        animation-delay: 1s
+      &:nth-child(3)
+        animation-delay: 1.5s
+      &:nth-child(4)
+        animation-delay: 2s
+
+@keyframes appear
+  to
+    opacity: 100

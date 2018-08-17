@@ -1,0 +1,45 @@
+.container
+  height: 100%
+  max-width: $media-laptop
+  margin: auto
+  padding-left: 15px
+  padding-right: 15px
+
+.hidden
+  display: none
+
+.show-type
+  display: block
+  width: 200px
+  margin: 15px auto
+  border: 1px solid $bg-light-gray
+  border-radius: 20px
+  color: $font-color-secondary
+  font-weight: 400
+  overflow: hidden
+  &__item
+    display: inline-block
+    width: 49%
+    padding: 2px 10px
+    text-align: center
+    font-size: 14px
+    &:not(:last-child)
+      border-right: 1px solid $bg-light-gray
+    &--current
+      background-color: $bg-light-gray
+      color: #fff
+
+.list
+  &__item
+    margin: 0 20px
+
+.section
+  &__container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding-top: 40px
+    padding-bottom: 5vh
+  &__title
+    font-size: 32px
+    margin: 10px 0
