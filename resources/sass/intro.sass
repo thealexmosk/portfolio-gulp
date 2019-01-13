@@ -52,7 +52,7 @@
     transform: translateY(100vh)
     opacity: 0
     animation: showPhoto 1s ease-in-out forwards
-    animation-delay: 1s
+    animation-delay: .9s
   .intro__name
     transform: translateX(-100vh)
     animation: showText 1s ease-in-out forwards
@@ -62,10 +62,18 @@
     animation: showText 1s ease-in-out forwards
     animation-delay: .7s
 
+.intro:not(.active)
+  .photo__asset
+    animation: hidePhoto 0.5s ease-in-out forwards
+
 @keyframes showPhoto
   to
     transform: translateY(0)
     opacity: 100
+@keyframes hidePhoto
+  to
+    transform: translate(300px, -500px)
+    opacity: 0
 
 @keyframes showText
   to

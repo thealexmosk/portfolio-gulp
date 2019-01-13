@@ -216,8 +216,8 @@ body {
   opacity: 0;
   -webkit-animation: showPhoto 1s ease-in-out forwards;
   animation: showPhoto 1s ease-in-out forwards;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s; }
+  -webkit-animation-delay: .9s;
+  animation-delay: .9s; }
 
 .intro.active .intro__name {
   -webkit-transform: translateX(-100vh);
@@ -237,6 +237,10 @@ body {
   -webkit-animation-delay: .7s;
   animation-delay: .7s; }
 
+.intro:not(.active) .photo__asset {
+  -webkit-animation: hidePhoto 0.5s ease-in-out forwards;
+  animation: hidePhoto 0.5s ease-in-out forwards; }
+
 @-webkit-keyframes showPhoto {
   to {
     -webkit-transform: translateY(0);
@@ -249,6 +253,18 @@ body {
     transform: translateY(0);
     opacity: 100; } }
 
+@-webkit-keyframes hidePhoto {
+  to {
+    -webkit-transform: translate(300px, -500px);
+    transform: translate(300px, -500px);
+    opacity: 0; } }
+
+@keyframes hidePhoto {
+  to {
+    -webkit-transform: translate(300px, -500px);
+    transform: translate(300px, -500px);
+    opacity: 0; } }
+
 @-webkit-keyframes showText {
   to {
     -webkit-transform: translateX(0);
@@ -260,10 +276,22 @@ body {
     transform: translateX(0); } }
 
 .about {
-  background: #f1f1f1;
-  -webkit-animation: init_bg .5s ease-in;
-  animation: init_bg .5s ease-in;
-  color: #efdab9; }
+  background: -webkit-gradient(linear, left top, right top, from(#fafafa), color-stop(50%, #f1f1f1), to(#e6e6e6));
+  background: linear-gradient(to right, #fafafa 0%, #f1f1f1 50%, #e6e6e6 100%);
+  color: #efdab9;
+  overflow: hidden; }
+  .about .bg-circle {
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+    .about .bg-circle svg {
+      width: 100%;
+      height: 100%; }
+      .about .bg-circle svg circle {
+        r: 0%;
+        fill: #323031;
+        -webkit-transition: 1s ease-out;
+        transition: 1s ease-out; }
   .about__main {
     display: -webkit-box;
     display: -webkit-flex;
@@ -299,8 +327,8 @@ body {
     -ms-flex-pack: center;
     justify-content: center;
     position: absolute;
-    height: 16vh;
-    width: 16vh;
+    height: 17vh;
+    width: 17vh;
     max-height: 140px;
     max-width: 140px;
     font-size: 14px;
@@ -308,7 +336,8 @@ body {
     background-color: #8d8273;
     border: 1px solid gray;
     -webkit-border-radius: 50%;
-    border-radius: 50%; }
+    border-radius: 50%;
+    overflow: hidden; }
     @media (min-width: 768px) {
       .about__item {
         font-size: 16px; } }
@@ -321,13 +350,13 @@ body {
       font-size: 1.05em;
       padding-bottom: 5px; }
   .about__from {
-    bottom: -30vh;
+    bottom: -25vh;
     left: 0;
     -webkit-animation: move_from 10s alternate ease-in-out infinite;
     animation: move_from 10s alternate ease-in-out infinite; }
   .about__born {
     bottom: -10vh;
-    left: -50%;
+    left: -55%;
     -webkit-animation: move_born 3s alternate ease-in-out infinite;
     animation: move_born 3s alternate ease-in-out infinite; }
   .about__play {
@@ -404,11 +433,10 @@ body {
       -webkit-animation: rotate 80s infinite linear;
       animation: rotate 80s infinite linear; }
 
-.about.active {
-  -webkit-animation: chabge_about_bg 2.5s ease-in forwards;
-  animation: chabge_about_bg 2.5s ease-in forwards;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s; }
+.about.active .bg-circle svg circle {
+  r: 100%;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s; }
 
 @-webkit-keyframes move_from {
   from {
@@ -516,30 +544,6 @@ body {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
-@-webkit-keyframes chabge_about_bg {
-  5% {
-    background: #f1f1f1; }
-  100% {
-    background: #323031; } }
-
-@keyframes chabge_about_bg {
-  5% {
-    background: #f1f1f1; }
-  100% {
-    background: #323031; } }
-
-@-webkit-keyframes init_bg {
-  0% {
-    background: #323031; }
-  100% {
-    background: #f1f1f1; } }
-
-@keyframes init_bg {
-  0% {
-    background: #323031; }
-  100% {
-    background: #f1f1f1; } }
-
 .skills {
   background: -webkit-gradient(linear, left top, right top, from(#fafafa), color-stop(50%, #f1f1f1), to(#e6e6e6));
   background: linear-gradient(to right, #fafafa 0%, #f1f1f1 50%, #e6e6e6 100%); }
@@ -581,17 +585,17 @@ body {
   -webkit-animation: appear 1s ease-in-out forwards;
   animation: appear 1s ease-in-out forwards; }
   .skills.active .skills__category:nth-child(1) {
-    -webkit-animation-delay: .5s;
-    animation-delay: .5s; }
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s; }
   .skills.active .skills__category:nth-child(2) {
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s; }
+    -webkit-animation-delay: .6s;
+    animation-delay: .6s; }
   .skills.active .skills__category:nth-child(3) {
-    -webkit-animation-delay: 1.5s;
-    animation-delay: 1.5s; }
+    -webkit-animation-delay: .9s;
+    animation-delay: .9s; }
   .skills.active .skills__category:nth-child(4) {
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s; }
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s; }
 
 @-webkit-keyframes appear {
   to {
@@ -710,7 +714,9 @@ body {
   .story__goodwin {
     height: 160px; }
   .story__freelance {
-    height: 190px; }
+    height: 180px; }
+  .story__own-2018 {
+    height: 180px; }
 
 .point__begin {
   top: 0; }
@@ -760,6 +766,9 @@ body {
 .point__2018-apr::before {
   content: 'Apr 2018'; }
 
+.point__2018-aug::before {
+  content: 'Aug 2018'; }
+
 .line__2012-2014 {
   height: 80px; }
 
@@ -788,17 +797,22 @@ body {
   .line__2017-mar--2018-apr svg {
     height: 160px; }
 
-.line__2018-apr--undef {
-  height: 190px; }
-  .line__2018-apr--undef svg {
-    height: 190px; }
+.line__2018-apr--2018-aug {
+  height: 180px; }
+  .line__2018-apr--2018-aug svg {
+    height: 180px; }
+
+.line__2018-aug--inf {
+  height: 180px; }
+  .line__2018-aug--inf svg {
+    height: 180px; }
 
 .exp__point::before {
   left: -55px; }
 
 .edu_exp.active .story__container {
-  -webkit-animation: show_up 2.5s ease-in-out forwards;
-  animation: show_up 2.5s ease-in-out forwards; }
+  -webkit-animation: show_up 1.5s ease-in-out forwards;
+  animation: show_up 1.5s ease-in-out forwards; }
 
 @-webkit-keyframes show_up {
   0% {
@@ -851,7 +865,9 @@ body {
 
 .contact.active {
   -webkit-animation: gradient 15s ease-in-out alternate infinite;
-  animation: gradient 15s ease-in-out alternate infinite; }
+  animation: gradient 15s ease-in-out alternate infinite;
+  -webkit-animation-delay: -6.5s;
+  animation-delay: -6.5s; }
 
 .social__item {
   display: inline-block;

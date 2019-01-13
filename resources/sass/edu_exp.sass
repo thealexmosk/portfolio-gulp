@@ -86,7 +86,9 @@
   &__goodwin
     height: 160px
   &__freelance
-    height: 190px
+    height: 180px
+  &__own-2018
+    height: 180px
 
 .point
   &__begin
@@ -131,6 +133,9 @@
   &__2018-apr
     &::before
       content: 'Apr 2018'
+  &__2018-aug
+    &::before
+      content: 'Aug 2018'
 
 .line
   &__2012-2014
@@ -152,10 +157,14 @@
     height: 160px
     svg
       height: 160px
-  &__2018-apr--undef
-    height: 190px
+  &__2018-apr--2018-aug
+    height: 180px
     svg
-      height: 190px
+      height: 180px
+  &__2018-aug--inf
+    height: 180px
+    svg
+      height: 180px
 
 .exp__point
   &::before
@@ -163,7 +172,7 @@
 
 .edu_exp.active
   .story__container
-    animation: show_up 2.5s ease-in-out forwards
+    animation: show_up 1.5s ease-in-out forwards
 
 @keyframes show_up
   0%
