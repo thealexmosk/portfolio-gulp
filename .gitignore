@@ -2,3 +2,5 @@ node_modules
 package-lock.json
 prod/
 public/
+!public/assets/images/*
+!public/assets/js/*
